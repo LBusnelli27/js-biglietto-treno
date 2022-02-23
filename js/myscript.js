@@ -19,13 +19,13 @@ document.getElementById('my-km').innerHTML = `La tua tratta dura ${journeyKm} KM
 let priceTicket = (journeyKm * 0.21).toFixed(2);
 console.log("The price is: " + priceTicket)
 
-if (userAge < 18) {
+if ((userAge < 18) && (userAge > 0)) {
     priceTicket = (priceTicket - ((priceTicket / 100) * 20)).toFixed(2);
     console.log("Discont price: " + priceTicket)
     document.getElementById('my-perc-discount').innerHTML = `Visto sei minorenne ti abbiamo fatto uno sconto del 20% sul prezzo del biglietto`;
 }
 
-if (userAge > 65) {
+if ((userAge >= 65) && (userAge <= 115)) {
     priceTicket = (priceTicket - ((priceTicket / 100) * 40)).toFixed(2);
     console.log("Discont price: " + priceTicket)
     document.getElementById('my-perc-discount').innerHTML = `Visto sei over 65 ti abbiamo fatto uno sconto del 40% sul prezzo del biglietto`;
